@@ -33,23 +33,36 @@ int main(void)
 		{
 			cout << endl << "삭제할 값 : ";
 			cin >> inputData;
-			li.Delete(inputData);
-			cout << endl << "성공적으로 삭제하였습니다." << endl;
-			system("pause");
-			 
-			//	cout << endl << "삭제에 실패하였습니다." << endl;
-
-		}
-		/*else if (command == 3)
-		{
-			cout << endl << "삭제할 위치 : ";
-			cin >> temp1;
-			if (remove_at(li, temp1))
+			if (li.Delete(inputData))
+			{
 				cout << endl << "성공적으로 삭제하였습니다." << endl;
+				system("pause");
+			}
 			else
+			{
 				cout << endl << "삭제에 실패하였습니다." << endl;
+				system("pause");
+			}
 		}
-	*/
+		else if (command == 3)
+		{
+			int idx;
+			cout << endl << "삭제할 위치 : ";
+			cin >> idx;
+
+			if (li.Delete_at(idx))
+			{
+				cout << endl << "성공적으로 삭제하였습니다." << endl;
+				system("pause");
+				cout << li.length();
+			}
+			else
+			{
+				cout << endl << "삭제에 실패하였습니다." << endl;
+				system("pause");
+			}
+		}
+	
 		else
 		{
 			cout << endl << "잘못된 입력." << endl;
